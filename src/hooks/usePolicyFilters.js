@@ -53,26 +53,26 @@ export function usePolicyFilters() {
   }, [updateFilters]);
 
   const updateSearch = useCallback((query) => {
-    updateFilters({ search: query || null, page: null });
+    updateFilters({ search: query || null, page: 1 }); // Reset to page 1 on search change
   }, [updateFilters]);
 
   const updateStatus = useCallback((status) => {
-    updateFilters({ status: status || null, page: null });
+    updateFilters({ status: status || null, page: 1 }); // Reset to page 1 on status change
   }, [updateFilters]);
 
   const updateLineOfBusiness = useCallback((lob) => {
-    updateFilters({ lob: lob || null, page: null });
+    updateFilters({ lob: lob || null, page: 1 }); // Reset to page 1 on LOB change
   }, [updateFilters]);
 
   const updateRegion = useCallback((region) => {
-    updateFilters({ region: region || null, page: null });
+    updateFilters({ region: region || null, page: 1 }); // Reset to page 1 on region change
   }, [updateFilters]);
 
   const updateDateRange = useCallback((type, from, to) => {
     updateFilters({
       [`${type}DateFrom`]: from || null,
       [`${type}DateTo`]: to || null,
-      page: null,
+      page: 1, // Reset to page 1 on date range change
     });
   }, [updateFilters]);
 

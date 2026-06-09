@@ -114,7 +114,7 @@ export function PolicyTable() {
             </TableHead>
             <TableBody>
               {Array.from({ length: 5 }).map((_, rowIndex) => (
-                <TableRow key={rowIndex}>
+                <TableRow key={rowIndex} aria-label="loading">
                   {Array.from({ length: 9 }).map((_, colIndex) => (
                     <TableCell key={colIndex}>
                       <MuiSkeleton variant="text" />

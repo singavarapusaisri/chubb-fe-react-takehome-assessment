@@ -15,6 +15,8 @@ export function useLocalStorage(key, defaultValue) {
       if (item) {
         return JSON.parse(item);
       }
+      // Persist the default value immediately to ensure synchronization between state and storage
+      window.localStorage.setItem(key, JSON.stringify(defaultValue));
       return defaultValue;
     } catch (error) {
       console.error(`Error reading localStorage key "${key}":`, error);

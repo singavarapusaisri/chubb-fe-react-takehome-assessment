@@ -171,8 +171,8 @@ export function StatsPanel() {
         <StatCard
           label="Total Premium (P&C)"
           value={
-            lobTotals.Property || lobTotals.Casualty
-              ? `$${((lobTotals.Property || 0) + (lobTotals.Casualty || 0) / 1000000).toFixed(1)}M`
+            (lobTotals.Property || lobTotals.Casualty)
+              ? `$${(((lobTotals.Property || 0) + (lobTotals.Casualty || 0)) / 1000000).toFixed(1)}M`
               : '$0'
           }
           subtext={

@@ -91,8 +91,10 @@ export function FilterBar() {
         {/* Basic Filters */}
         <Grid item xs={12} sm={6} md={4}>
           <FormControl fullWidth>
-            <InputLabel>Status</InputLabel>
+            <InputLabel id="status-filter-label" htmlFor="status-select">Status</InputLabel>
             <Select
+              id="status-select"
+              labelId="status-filter-label"
               label="Status"
               value={filters.status}
               onChange={(e) => updateStatus(e.target.value)}
@@ -111,8 +113,10 @@ export function FilterBar() {
 
         <Grid item xs={12} sm={6} md={4}>
           <FormControl fullWidth>
-            <InputLabel>Line of Business</InputLabel>
+            <InputLabel id="lob-filter-label" htmlFor="lob-select">Line of Business</InputLabel>
             <Select
+              id="lob-select"
+              labelId="lob-filter-label"
               label="Line of Business"
               value={filters.lineOfBusiness}
               onChange={(e) => updateLineOfBusiness(e.target.value)}
@@ -131,8 +135,10 @@ export function FilterBar() {
 
         <Grid item xs={12} sm={6} md={4}>
           <FormControl fullWidth>
-            <InputLabel>Region</InputLabel>
+            <InputLabel id="region-filter-label" htmlFor="region-select">Region</InputLabel>
             <Select
+              id="region-select"
+              labelId="region-filter-label"
               label="Region"
               value={filters.region}
               onChange={(e) => updateRegion(e.target.value)}
@@ -167,7 +173,7 @@ export function FilterBar() {
 
         {/* Advanced Filters */}
         <Grid item xs={12}>
-          <Collapse in={showAdvanced}>
+          <Collapse in={showAdvanced} unmountOnExit>
             <Box sx={{ p: 2, backgroundColor: 'action.hover', borderRadius: 1, mb: 2 }}>
               <Typography variant="subtitle2" sx={{ mb: 2, fontWeight: 700 }}>
                 📅 Effective Date Range
@@ -177,7 +183,7 @@ export function FilterBar() {
                   <TextField
                     fullWidth
                     type="date"
-                    label="From"
+                    label="Effective Date From"
                     InputLabelProps={{ shrink: true }}
                     value={filters.effectiveDateFrom}
                     onChange={(e) =>
@@ -189,7 +195,7 @@ export function FilterBar() {
                   <TextField
                     fullWidth
                     type="date"
-                    label="To"
+                    label="Effective Date To"
                     InputLabelProps={{ shrink: true }}
                     value={filters.effectiveDateTo}
                     onChange={(e) =>
@@ -207,7 +213,7 @@ export function FilterBar() {
                   <TextField
                     fullWidth
                     type="date"
-                    label="From"
+                    label="Expiry Date From"
                     InputLabelProps={{ shrink: true }}
                     value={filters.expiryDateFrom}
                     onChange={(e) =>
@@ -219,7 +225,7 @@ export function FilterBar() {
                   <TextField
                     fullWidth
                     type="date"
-                    label="To"
+                    label="Expiry Date To"
                     InputLabelProps={{ shrink: true }}
                     value={filters.expiryDateTo}
                     onChange={(e) =>
